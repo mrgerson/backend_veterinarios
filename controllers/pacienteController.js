@@ -1,6 +1,8 @@
 import Paciente from "../models/Paciente.js";
 
 const agregarPaciente = async (req, res) => {
+
+  console.log(req.body)
   const paciente = new Paciente(req.body);
   paciente.veterinario = req.veterinario._id;
   try {

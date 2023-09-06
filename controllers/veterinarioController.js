@@ -20,11 +20,11 @@ const registrar = async (req, res) => {
     const veterinarioGuardado = await veterinario.save();
 
     // Enviar el email
-  /*   emailRegistro({
+    emailRegistro({
       email,
       nombre,
       token: veterinarioGuardado.token,
-    }); */
+    });
 
     res.json(veterinarioGuardado);
   } catch (error) {

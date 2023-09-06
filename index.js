@@ -18,7 +18,7 @@ const dominiosPermitidos = [process.env.FRONTEND_URL];
 
 const whiteList = [process.env.FRONTEND_URL];
 
-app.use(
+/* app.use(
   cors({
       origin: function (origin, callback) {
           console.log(origin)
@@ -31,9 +31,9 @@ app.use(
       },
       credentials: true,
   })
-);
+); */
 
-/* const corsOptions = {
+const corsOptions = {
   origin: function (origin, callback) {
     console.log('este es el origin', origin)
     if (dominiosPermitidos.indexOf(origin) !== -1) {
@@ -45,7 +45,7 @@ app.use(
   },
 };
 
-app.use(cors(corsOptions)); */
+app.use(cors(corsOptions));
 
 app.use("/api/veterinarios", veterinarioRoutes);
 app.use("/api/pacientes", pacienteRoutes);
